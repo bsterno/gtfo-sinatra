@@ -1,15 +1,37 @@
 header  {
-  background: url("/images/gtfo_tulips.jpg") repeat;
-  background-attachment: fixed;
+  background: url("/images/gtfo_tulips.jpg") no-repeat center center fixed;
+  background-size: cover;
   background-position: center top;
   overflow-x: hidden;
-  background-size: 100%;
 }
 
 body {
   color: white;
+  font-family: bandung;
+  font-weight: 400;
 }
 
-h1 {
+.circle {
+  width: 500px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 200px;
+  background: url("/images/gtfo_logo.png") no-repeat center center;
+  background-size: 130%;
+}
+
+#gtfo {
   color: white;
+  font-family: cursive;
+  font-size: 30px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.main-list {
+  background-color: rgba(255, 255, 255, 0.5);
 }

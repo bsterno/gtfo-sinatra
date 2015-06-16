@@ -9,9 +9,13 @@
 
   <body>
     <header>
-      <h1>You're in <%= city %>, <%= region %> - <strong>Get The F*ck Outside!</strong></h1>
+      <div class="circle">
+<!--         <h1 id="gtfo">Get The F*ck Outside</h1>
+ -->      </div>
 
-      <div>
+      You're in <%= city %>, <%= region %> -
+
+      <div class="main-list">
         <ol>
           <% places.each do |place| %>
             <li>
