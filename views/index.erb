@@ -9,33 +9,15 @@
 
   <body>
     <header>
-      <div class="circle">
-<!--         <h1 id="gtfo">Get The F*ck Outside</h1>
- -->      </div>
-
-      You're in <%= city %>, <%= region %> -
-
-      <div class="main-list">
-        <ol>
-          <% places.each do |place| %>
-            <li>
-              <a href="/gtfo/<%=place["name"]%>"><%= place["name"] %></a>
-              <ul><li>Rating: <%= place["rating"] %></li></ul>
-            </li>
-          <% end %>
-        </ol>
+      <div class="row">
+        <div class="small-6 large-centered columns"></div>
       </div>
 
-      <div>
-        <iframe
-          width="600"
-          height="450"
-          frameborder="0" style="border:0"
-          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBRo-mtutP62p-Z5mPGwgZj0fArDw7e_7A
-            &q=<%= city %>, <%= region %>
-            &attribution_source=Google+Maps+Embed+API
-            &attribution_ios_deep_link_id=comgooglemaps://?daddr=<%= city %>, <%= region %>">
-        </iframe>
+      <div class="navigation-buttons">
+        <ul class="button-group even-2">
+         <li><a href="/gtfo/explore" class="button">explore</a></li>
+         <li><a href="#" class="button">search by city</a></li>
+         </ul>
       </div>
 
       <div>
@@ -43,6 +25,5 @@
       </div>
     </header>
   </body>
-
 
 </html>

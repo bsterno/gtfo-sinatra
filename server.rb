@@ -11,7 +11,11 @@ get "/" do
   redirect "/gtfo"
 end
 
-get '/gtfo' do
+get "/gtfo" do
+  erb :index
+end
+
+get '/gtfo/explore' do
   location = HTTParty.get('http://api.divesites.com')
   city = location["loc"]["city"]
   region = location["loc"]["region_name"]
@@ -22,10 +26,10 @@ get '/gtfo' do
     session["#{data["name"]}"] = data["place_id"]
   end
 
-  erb :index, locals: { places: places, city: city, region: region }
+  erb :explore, locals: { places: places, city: city, region: region }
 end
 
-get '/gtfo/:park_name' do
+get '/gtfo/explore/:park_name' do
   place_id = session[params[:park_name]]
   location = HTTParty.get('http://api.divesites.com')
   city = location["loc"]["city"]
@@ -33,5 +37,6 @@ get '/gtfo/:park_name' do
   park = params[:park_name]
   place_info = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{place_id}&key=AIzaSyBRo-mtutP62p-Z5mPGwgZj0fArDw7e_7A")
   place_reviews = place_info["result"]["reviews"]
+
   erb :show, locals: { park: park, city: city, region: region, place_reviews: place_reviews, place_info: place_info }
 end
